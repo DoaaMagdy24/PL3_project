@@ -231,24 +231,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\EL Tawam\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\pc\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\EL Tawam\\source\\repos\\Text Analyzer\\Text Analyzer\\Text Analyzer.fsproj",
+      "projectUniqueName": "D:\\University\\PL3\\PL3_project\\Text Analyzer\\Text Analyzer\\Text Analyzer.fsproj",
       "projectName": "Text Analyzer",
-      "projectPath": "C:\\Users\\EL Tawam\\source\\repos\\Text Analyzer\\Text Analyzer\\Text Analyzer.fsproj",
-      "packagesPath": "C:\\Users\\EL Tawam\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\EL Tawam\\source\\repos\\Text Analyzer\\Text Analyzer\\obj\\",
+      "projectPath": "D:\\University\\PL3\\PL3_project\\Text Analyzer\\Text Analyzer\\Text Analyzer.fsproj",
+      "packagesPath": "C:\\Users\\pc\\.nuget\\packages\\",
+      "outputPath": "D:\\University\\PL3\\PL3_project\\Text Analyzer\\Text Analyzer\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\EL Tawam\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\pc\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -256,7 +251,8 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\sdk\\9.0.100\\FSharp\\library-packs": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
+        "C:\\Program Files\\dotnet\\sdk\\8.0.303\\FSharp\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -268,9 +264,8 @@
       "restoreAuditProperties": {
         "enableAudit": "true",
         "auditLevel": "low",
-        "auditMode": "all"
-      },
-      "SdkAnalysisLevel": "9.0.100"
+        "auditMode": "direct"
+      }
     },
     "frameworks": {
       "net8.0-windows7.0": {
@@ -307,7 +302,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.100/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
       }
     }
   },

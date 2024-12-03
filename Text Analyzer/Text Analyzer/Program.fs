@@ -1,17 +1,8 @@
 ﻿open System
 open System.Windows.Forms
-open System.IO
 open System.Drawing
-
-// Function to load text from a file
-let loadTextFromFile (filePath: string) =
-    try
-        File.ReadAllText(filePath)
-    with
-        | :? FileNotFoundException -> "File not found."
-        | ex -> sprintf "An error occurred: %s" ex.Message
-
-
+open InputHandling
+open TextAnalysis
 
 // Main application function
 [<STAThread>]
@@ -38,17 +29,13 @@ let main () =
     // Event handler for Analyze button
     analyzeButton.Click.Add(fun _ ->
         let inputText = inputBox.Text
-        if String.IsNullOrWhiteSpace(inputText) then
-            outputBox.Text <- "Please enter or load some text for analysis."
-        else
-        //need to change
-            outputBox.Text <- "Please enter or load some text for analysis."
+        outputBox.Text <- analyzeText inputText
     )
 
     // Event handler for Load File button
     loadButton.Click.Add(fun _ ->
-        let openFileDialog = new OpenFileDialog(Filter = "Text Files (*.txt)|*.txt|All Files (*.*)|*.*")
-        openFileDialog.InitialDirectory <- @"E:\";
+        let openFileDialog = new OpenFileDialog(Filter = "Text Files (*.txt)|*.txt")
+        openFileDialog.InitialDirectory <- @"D:\";
         if openFileDialog.ShowDialog() = DialogResult.OK then
             let filePath = openFileDialog.FileName
             try

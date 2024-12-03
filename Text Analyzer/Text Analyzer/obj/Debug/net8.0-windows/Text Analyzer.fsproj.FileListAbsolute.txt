@@ -29,3 +29,35 @@ C:\Users\EL Tawam\source\repos\Text Analyzer\Text Analyzer\obj\Debug\net8.0-wind
 C:\Users\EL Tawam\source\repos\Text Analyzer\Text Analyzer\obj\Debug\net8.0-windows\Text Analyzer.pdb
 C:\Users\EL Tawam\source\repos\Text Analyzer\Text Analyzer\obj\Debug\net8.0-windows\Text Analyzer.genruntimeconfig.cache
 C:\Users\EL Tawam\source\repos\Text Analyzer\Text Analyzer\obj\Debug\net8.0-windows\ref\Text Analyzer.dll
+D:\University\PL3\PL3_project\Text Analyzer\Text Analyzer\bin\Debug\net8.0-windows\Text Analyzer.exe
+D:\University\PL3\PL3_project\Text Analyzer\Text Analyzer\bin\Debug\net8.0-windows\Text Analyzer.deps.json
+D:\University\PL3\PL3_project\Text Analyzer\Text Analyzer\bin\Debug\net8.0-windows\Text Analyzer.runtimeconfig.json
+D:\University\PL3\PL3_project\Text Analyzer\Text Analyzer\bin\Debug\net8.0-windows\Text Analyzer.dll
+D:\University\PL3\PL3_project\Text Analyzer\Text Analyzer\bin\Debug\net8.0-windows\Text Analyzer.pdb
+D:\University\PL3\PL3_project\Text Analyzer\Text Analyzer\bin\Debug\net8.0-windows\FSharp.Core.dll
+D:\University\PL3\PL3_project\Text Analyzer\Text Analyzer\bin\Debug\net8.0-windows\System.Reactive.dll
+D:\University\PL3\PL3_project\Text Analyzer\Text Analyzer\bin\Debug\net8.0-windows\System.Reactive.Windows.Forms.dll
+D:\University\PL3\PL3_project\Text Analyzer\Text Analyzer\bin\Debug\net8.0-windows\cs\FSharp.Core.resources.dll
+D:\University\PL3\PL3_project\Text Analyzer\Text Analyzer\bin\Debug\net8.0-windows\de\FSharp.Core.resources.dll
+D:\University\PL3\PL3_project\Text Analyzer\Text Analyzer\bin\Debug\net8.0-windows\es\FSharp.Core.resources.dll
+D:\University\PL3\PL3_project\Text Analyzer\Text Analyzer\bin\Debug\net8.0-windows\fr\FSharp.Core.resources.dll
+D:\University\PL3\PL3_project\Text Analyzer\Text Analyzer\bin\Debug\net8.0-windows\it\FSharp.Core.resources.dll
+D:\University\PL3\PL3_project\Text Analyzer\Text Analyzer\bin\Debug\net8.0-windows\ja\FSharp.Core.resources.dll
+D:\University\PL3\PL3_project\Text Analyzer\Text Analyzer\bin\Debug\net8.0-windows\ko\FSharp.Core.resources.dll
+D:\University\PL3\PL3_project\Text Analyzer\Text Analyzer\bin\Debug\net8.0-windows\pl\FSharp.Core.resources.dll
+D:\University\PL3\PL3_project\Text Analyzer\Text Analyzer\bin\Debug\net8.0-windows\pt-BR\FSharp.Core.resources.dll
+D:\University\PL3\PL3_project\Text Analyzer\Text Analyzer\bin\Debug\net8.0-windows\ru\FSharp.Core.resources.dll
+D:\University\PL3\PL3_project\Text Analyzer\Text Analyzer\bin\Debug\net8.0-windows\tr\FSharp.Core.resources.dll
+D:\University\PL3\PL3_project\Text Analyzer\Text Analyzer\bin\Debug\net8.0-windows\zh-Hans\FSharp.Core.resources.dll
+D:\University\PL3\PL3_project\Text Analyzer\Text Analyzer\bin\Debug\net8.0-windows\zh-Hant\FSharp.Core.resources.dll
+D:\University\PL3\PL3_project\Text Analyzer\Text Analyzer\obj\Debug\net8.0-windows\Text Analyzer.fsproj.AssemblyReference.cache
+D:\University\PL3\PL3_project\Text Analyzer\Text Analyzer\obj\Debug\net8.0-windows\Text Analyzer.AssemblyInfoInputs.cache
+D:\University\PL3\PL3_project\Text Analyzer\Text Analyzer\obj\Debug\net8.0-windows\Text Analyzer.AssemblyInfo.fs
+D:\University\PL3\PL3_project\Text Analyzer\Text Analyzer\obj\Debug\net8.0-windows\Text Analyzer.fsproj.CoreCompileInputs.cache
+D:\University\PL3\PL3_project\Text Analyzer\Text Analyzer\obj\Debug\net8.0-windows\Text Analyzer.sourcelink.json
+D:\University\PL3\PL3_project\Text Analyzer\Text Analyzer\obj\Debug\net8.0-windows\Text Ana.91FD8678.Up2Date
+D:\University\PL3\PL3_project\Text Analyzer\Text Analyzer\obj\Debug\net8.0-windows\Text Analyzer.dll
+D:\University\PL3\PL3_project\Text Analyzer\Text Analyzer\obj\Debug\net8.0-windows\refint\Text Analyzer.dll
+D:\University\PL3\PL3_project\Text Analyzer\Text Analyzer\obj\Debug\net8.0-windows\Text Analyzer.pdb
+D:\University\PL3\PL3_project\Text Analyzer\Text Analyzer\obj\Debug\net8.0-windows\Text Analyzer.genruntimeconfig.cache
+D:\University\PL3\PL3_project\Text Analyzer\Text Analyzer\obj\Debug\net8.0-windows\ref\Text Analyzer.dll
