@@ -22,6 +22,13 @@ let countVowels (text: string) =
     text.ToLower()
     |> Seq.filter (fun c -> vowels.Contains(c))
     |> Seq.length
+let calculateWordFrequency (text: string) =
+    let cleanText = text.ToLower().Replace(",", "").Replace(".", "").Replace("?", "").Replace("!", "")
+    let words = cleanText.Split([| ' '; '\t'; '\n'; '\r' |], StringSplitOptions.RemoveEmptyEntries)
+    words
+    |> Seq.groupBy id
+    |> Seq.map (fun (word, occurrences) -> word, Seq.length occurrences)
+    |> Seq.sortByDescending snd 
 
 let analyzeText (text: string) =
     if String.IsNullOrWhiteSpace(text) then
@@ -32,6 +39,11 @@ let analyzeText (text: string) =
         let paragraphCount = countParagraphs text
         let characterCount = countCharacters text
         let vowelCount = countVowels text
+        let wordFrequencies = calculateWordFrequency text |> Seq.take 5 // أخذ أكثر 5 كلمات تكرارًا
+        let topWords = 
+            wordFrequencies
+            |> Seq.map (fun (word, freq) -> sprintf "        %s : %d" word freq)
+            |> String.concat "\n"
         sprintf """
         ============================
             Text Analysis Report
@@ -42,6 +54,6 @@ let analyzeText (text: string) =
         📑 Paragraph Count  : %d
         🔡 Character Count  : %d
         🅰️  Vowel Count     : %d
-
+        🏆 Top Words        : %s
         ============================
-        """ wordCount sentenceCount paragraphCount characterCount vowelCount
+        """ wordCount sentenceCount paragraphCount characterCount vowelCount topWords
