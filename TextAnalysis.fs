@@ -11,7 +11,7 @@ let countSentences (text: string) =
     sentences.Length
 
 let countParagraphs (text: string) =
-    let paragraphs = text.Split([| '\n' |], StringSplitOptions.RemoveEmptyEntries)
+    let paragraphs = text.Split([| "\n"; "\r\n" |], StringSplitOptions.RemoveEmptyEntries)
     paragraphs.Length
 
 let countCharacters (text: string) =
