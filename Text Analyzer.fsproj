@@ -10,6 +10,7 @@
   <ItemGroup>
     <Compile Include="TextAnalysis.fs" />
     <Compile Include="InputHandling.fs" />
+    <Compile Include="Output.fs" />
     <Compile Include="Program.fs" />
   </ItemGroup>
 

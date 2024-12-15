@@ -4,15 +4,22 @@ open System
 open System.Text.RegularExpressions
 
 let countWords (text: string) =
-    let words = text.Split([| ' '; '\t'; '\n'; '\r' |], StringSplitOptions.RemoveEmptyEntries)
+    let words = 
+        text.Split([| ' '; '\t'; '\n'; '\r' |], StringSplitOptions.RemoveEmptyEntries)
     words.Length
 
 let countSentences (text: string) =
-    let sentences = text.Split([| '.'; '?'; '!' |], StringSplitOptions.RemoveEmptyEntries)
+    let pattern = @"(?<=[.!?])\s+"  // This matches sentence-ending punctuation followed by whitespace.
+    let sentences = 
+        Regex.Split(text, pattern)
+        |> List.ofArray
+        |> List.filter (fun s -> not (String.IsNullOrWhiteSpace(s))) // Remove empty sentences
     sentences.Length
 
 let countParagraphs (text: string) =
-    let paragraphs = text.Split([| "\n"; "\r\n" |], StringSplitOptions.RemoveEmptyEntries)
+    let paragraphs = 
+        text.Split([| "\n"; "\r\n" |], StringSplitOptions.RemoveEmptyEntries)
+        |> List.ofArray
     paragraphs.Length
 
 let countCharacters (text: string) =
@@ -26,7 +33,9 @@ let countVowels (text: string) =
 
 let calculateWordFrequency (text: string) =
     let cleanText = text.ToLower().Replace(",", "").Replace(".", "").Replace("?", "").Replace("!", "")
-    let words = cleanText.Split([| ' '; '\t'; '\n'; '\r' |], StringSplitOptions.RemoveEmptyEntries)
+    let words = 
+        cleanText.Split([| ' '; '\t'; '\n'; '\r' |], StringSplitOptions.RemoveEmptyEntries)
+        |> List.ofArray
     words
     |> Seq.groupBy id
     |> Seq.map (fun (word, occurrences) -> word, Seq.length occurrences)
@@ -35,65 +44,41 @@ let calculateWordFrequency (text: string) =
 let measureTextReadability (text: string) =
     let sentences = 
         Regex.Split(text, @"[.!?]")
-        |> Array.map (fun s -> s.Trim())
-        |> Array.filter (fun s -> s <> "")
+        |> Seq.map (fun s -> s.Trim())
+        |> Seq.filter (fun s -> s <> "")
     
-    let words = text.Split([|' '; '\t'; '\n'; '\r'|], StringSplitOptions.RemoveEmptyEntries)
+    let words = 
+        text.Split([|' '; '\t'; '\n'; '\r'|], StringSplitOptions.RemoveEmptyEntries)
+        |> Seq.ofArray
     
     let avgSentenceLength = 
-        if sentences.Length > 0 then 
-            float words.Length / float sentences.Length 
-        else 
-            0
+        if Seq.isEmpty sentences then 0.0
+        else float (Seq.length words) / float (Seq.length sentences)
     avgSentenceLength
     
 let findShortestWords words =
     match words with
-    | [] -> [] // Return an empty list if input is empty
+    | [] -> [] 
     | _ ->
-        let minLength = words |> List.minBy String.length |> String.length
-        words |> List.filter (fun word -> String.length word = minLength)
+        let uniqueWords = words |> List.distinct 
+        let minLength = uniqueWords |> List.minBy String.length |> String.length
+        uniqueWords
+        |> List.filter (fun word -> String.length word = minLength)
+        |> List.truncate 3
 
 let findLongestWords words =
     match words with
-    | [] -> [] // Return an empty list if input is empty
+    | [] -> [] 
     | _ ->
-        let maxLength = words |> List.maxBy String.length |> String.length
-        words |> List.filter (fun word -> String.length word = maxLength)
+        let uniqueWords = words |> List.distinct 
+        let maxLength = uniqueWords |> List.maxBy (fun word -> String.length word) |> String.length
+        uniqueWords
+        |> List.filter (fun word -> String.length word = maxLength)
+        |> List.truncate 3 
 
-let analyzeText (text: string) =
-    if String.IsNullOrWhiteSpace(text) then
-        "Please enter or load some text for analysis."
-    else
-        let wordCount = countWords text
-        let sentenceCount = countSentences text
-        let paragraphCount = countParagraphs text
-        let characterCount = countCharacters text
-        let vowelCount = countVowels text
-        let wordFrequencies = calculateWordFrequency text |> Seq.take 5 // أخذ أكثر 5 كلمات تكرارًا
-        let readability = measureTextReadability text
-        let words = text.Split([| ' '; '\t'; '\n'; '\r' |], StringSplitOptions.RemoveEmptyEntries) |> List.ofArray
-        let shortestWords = findShortestWords words |> String.concat ", "
-        let longestWords = findLongestWords words |> String.concat ", "
-        let topWords = 
-            wordFrequencies
-            |> Seq.map (fun (word, freq) -> sprintf "        %s : %d" word freq)
-            |> String.concat "\n"
-        sprintf """
-        ============================
-            Text Analysis Report
-        ============================
-
-        📄 Word Count       : %d
-        ✒️  Sentence Count   : %d
-        📑 Paragraph Count  : %d
-        🔡 Character Count  : %d
-        🅰️  Vowel Count     : %d
-        🏆 Top Words        : %s
-        🟢 Shortest Words   : %s
-        🔵 Longest Words    : %s
-        📖 Avg Sentence Length : %.2f
-
-        ============================
-        """ wordCount sentenceCount paragraphCount characterCount vowelCount topWords readability
-
+let countUniqueWords (text: string) : int =
+    let pattern = @"\w+" 
+    Regex.Matches(text, pattern)
+    |> Seq.map (fun m -> m.Value.ToLower()) 
+    |> Set.ofSeq 
+    |> Set.count 

@@ -2,7 +2,7 @@
 open System.Windows.Forms
 open System.Drawing
 open InputHandling
-open Output
+open TextAnalysis
 
 // Main application function
 [<STAThread>]
