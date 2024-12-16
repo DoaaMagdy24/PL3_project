@@ -9,11 +9,11 @@ let countWords (text: string) =
     words.Length
 
 let countSentences (text: string) =
-    let pattern = @"(?<=[.!?])\s+"  // This matches sentence-ending punctuation followed by whitespace.
+    let pattern = @"(?<=[.!?])\s+" 
     let sentences = 
         Regex.Split(text, pattern)
         |> List.ofArray
-        |> List.filter (fun s -> not (String.IsNullOrWhiteSpace(s))) // Remove empty sentences
+        |> List.filter (fun s -> not (String.IsNullOrWhiteSpace(s))) 
     sentences.Length
 
 let countParagraphs (text: string) =
@@ -35,7 +35,7 @@ let calculateWordFrequency (text: string) =
     let cleanText = text.ToLower().Replace(",", "").Replace(".", "").Replace("?", "").Replace("!", "")
     let words = 
         cleanText.Split([| ' '; '\t'; '\n'; '\r' |], StringSplitOptions.RemoveEmptyEntries)
-        |> List.ofArray
+        |> Seq.ofArray
     words
     |> Seq.groupBy id
     |> Seq.map (fun (word, occurrences) -> word, Seq.length occurrences)
