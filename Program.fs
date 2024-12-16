@@ -8,7 +8,7 @@ open Output
 [<STAThread>]
 let main () =
     // Create the main form
-    let form = new Form(Text = "Text Analyzer", Width = 600, Height = 500, BackColor = Color.SteelBlue, Visible=true)
+    let form = new Form(Text = "Text Analyzer", Width = 600, Height = 600, BackColor = Color.SteelBlue, Visible=true)
 
     // Create input TextBox
     let inputBox = new TextBox(Multiline = true, Width = 560, Height = 150, Top = 10, Left = 10, ScrollBars = ScrollBars.Vertical)
@@ -18,7 +18,7 @@ let main () =
     let loadButton = new Button(Text = "Load File", Width = 100, Top = 170, Left = 120)
 
     // Create a TextBox for displaying results
-    let outputBox = new TextBox(Multiline = true, Width = 560, Height = 200, Top = 230, Left = 10, ReadOnly = true, ScrollBars = ScrollBars.Vertical)
+    let outputBox = new TextBox(Multiline = true, Width = 560, Height = 300, Top = 230, Left = 10, ReadOnly = true, ScrollBars = ScrollBars.Vertical)
 
     // Add controls to the form
     form.Controls.Add(inputBox)
